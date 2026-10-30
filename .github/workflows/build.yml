@@ -23,13 +23,13 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Installer Capacitor et configurer Android
+      - name: Creer le projet Capacitor directement
         run: |
-          npm install -g @capacitor/cli
-          npm install @capacitor/core @capacitor/android
-          npx cap init "Mon Budget" "com.monbudget.app" --web-dir www --npm-client npm
+          npm init -y
+          npm install @capacitor/core @capacitor/cli @capacitor/android
+          npx cap init "Mon Budget" "com.monbudget.app" --web-dir www --yes
           npx cap add android
-          npx cap sync
+          npx cap sync android
 
       - name: Compiler le fichier APK
         run: |
