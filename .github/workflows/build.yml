@@ -17,11 +17,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Installer Java 21
+      - name: Installer Java 17
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '21'
+          java-version: '17'
 
       - name: Creer le projet Capacitor propre
         run: |
