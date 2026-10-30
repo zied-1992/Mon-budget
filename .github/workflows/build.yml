@@ -17,17 +17,17 @@ jobs:
         with:
           node-version: 20
 
-      - name: Installer Java 21
+      - name: Installer Java 17
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '21'
+          java-version: '17'
 
-      - name: Preparer Capacitor et Android
+      - name: Installer Capacitor et configurer Android
         run: |
-          npm init -y
-          npm install @capacitor/core @capacitor/cli @capacitor/android
-          npx cap init "Mon Budget" "com.monbudget.app" --web-dir www
+          npm install -g @capacitor/cli
+          npm install @capacitor/core @capacitor/android
+          npx cap init "Mon Budget" "com.monbudget.app" --web-dir www --npm-client npm
           npx cap add android
           npx cap sync
 
